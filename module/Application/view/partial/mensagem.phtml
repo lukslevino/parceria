@@ -1,0 +1,83 @@
+<div class="col-md-4" id="alertas">
+    <div class="col-md-offset-1 col-md-7">
+        <?php
+
+        $trataTexto = function($str){
+            return preg_replace('/\s/',' ',str_replace('\r\n',' ',addslashes($str)));
+        };
+
+        $timeDefault = 150;
+
+        $successMessages = array_merge(
+            $this->flashMessenger()->getSuccessMessages(),
+            $this->flashMessenger()->getCurrentSuccessMessages()
+        );
+        if (!empty($successMessages)) {
+            echo "<script type='text/javascript'>";
+            foreach ($successMessages as $mensagem) {
+                echo 'createAlerts("success", "' . $mensagem . '");';
+            }
+            echo "</script>";
+        }
+        $messages = array_merge(
+            $this->flashMessenger()->getMessages(),
+            $this->flashMessenger()->getCurrentMessages()
+        );
+        if (!empty($messages)) {
+            echo "<script type='text/javascript'>";
+            $i=1;
+            foreach ($messages as $mensagem) {
+                echo 'setTimeout(function(){createAlerts("warning", "' . $mensagem . '");},' . $timeDefault * $i . ');';
+                $i++;
+            }
+            echo "</script>";
+        }
+
+        $erroMessages = array_merge(
+            $this->flashMessenger()->getErrorMessages(),
+            $this->flashMessenger()->getCurrentErrorMessages()
+        );
+
+        $exp = false;
+
+        if (!empty($erroMessages)) {
+            echo "<script type='text/javascript'>";
+            $i=1;
+            foreach ($erroMessages as $mensagem) {
+                if ($mensagem == \Application\Util\MensagemUtil::getMensagem('MSG076') || $mensagem == \Application\Util\MensagemUtil::getMensagem('MSG083')) {
+                    $redirect = true;
+                    $exp = true;
+                    echo 'setTimeout(function(){createAlerts("danger", "' .  $trataTexto($mensagem) . '");},' . $timeDefault * $i . ');';
+                    break;
+                }
+
+                echo 'setTimeout(function(){createAlerts("danger", "' .  $trataTexto($mensagem) . '");},' . $timeDefault * $i . ');';
+                $i++;
+            }
+//            echo "$(document).ready(function() { destacaObrigatoriedade(); })";
+            echo "</script>";
+        }
+
+        $infoMessages = array_merge(
+            $this->flashMessenger()->getInfoMessages(),
+            $this->flashMessenger()->getCurrentInfoMessages()
+        );
+        if (!empty($infoMessages) && !$exp) {
+            echo "<script type='text/javascript'>";
+            $i=1;
+            foreach ($infoMessages as $mensagem) {
+                echo 'setTimeout(function(){createAlerts("info", "' . $mensagem . '");},' . ($timeDefault*2) * $i . ');';
+                $i++;
+            }
+            echo "</script>";
+        }
+
+        if (!isset($redirect)) {
+            $this->flashMessenger()->clearMessages();
+            $this->flashMessenger()->clearCurrentMessages();
+            $this->flashMessenger()->clearCurrentMessagesFromContainer();
+            $this->flashMessenger()->clearMessagesFromContainer();
+        }
+        ?>
+    </div>
+</div>
