@@ -30,7 +30,7 @@
 </head>
 <body class>
         <header id="menu-lateral">
-            <ul id="nav-mobile" class="side-nav fixed">
+            <ul id="slid-out" class="side-nav fixed">
                 <li>
                     <div class="user-view">
                         <div class="background">
@@ -73,37 +73,30 @@
             </ul>
         </header>
         <main>
-            <nav class="top-bar grey darken-3" >
+            <nav class="top-bar ">
                 <div class="nav-wrapper " >
-                    <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <a href="#" data-activates="slide-out" class="button-collapse">
                         <i class="material-icons">menu</i>
                     </a>
                     <div class="brand-logo">
-                        <a href="/" class="page-title">Administração</a>
+                        <a href="/" class="page-title">Indicar um Amigo</a>
                     </div>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>
                             <a href="/">Alterar senha</a>
                         </li>
                         <li>
-                            <a href="/" data-turbolinks="false">
-                                <i class="material-icons right">exit_to_app</i>Encerrar sessão
-                            </a>
+                            <a href="../" data-turbolinks="false"><i class="material-icons right">exit_to_app</i>Encerrar sessão</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div id="container-conteudo">
-                <div class="row">
-                    <div class="col s12 content-view" >
-                        <div class="card">
+            <div class="content">
+                <div class="left-painel">
                             <?php echo $this->content ?>
-                        </div>
-                    </div>
                 </div>
             </div>
         </main>
-
         <script>
             $(document).ready(function () {
                 $(".button-collapse").sideNav();
