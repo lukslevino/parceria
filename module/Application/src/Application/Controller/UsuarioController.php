@@ -16,6 +16,7 @@ class UsuarioController extends AbstractActionController
 {
     public function solicitarAcessoAction()
     {
+        dumpd(1);
         $request = $this->getRequest();
         if ($request->isPost()){
         $post = $request->getPost();
@@ -28,5 +29,11 @@ class UsuarioController extends AbstractActionController
         print_r("Controller1");
         return $view;
 
+    }
+    public function acessoAction()
+    {
+        $viewModel = new ViewModel();
+        $viewModel->setTemplate('/application/usuario/acesso.phtml');
+        return $viewModel;
     }
 }
