@@ -14,40 +14,7 @@ legend {
     font-size: 16px;
 }
 
-.box-acesso {
-    background: #f0f0f0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.header{
-    position: fixed;
 
-}
-.box-acesso .box-interno {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: #FFF;
-    margin-bottom: 10px;
-    display: table;
-    width: 100%;
-}
-
-.box-acesso .botao-solicitar-acesso {
-    float: right;
-}
-
-.box-acesso h3 {
-    margin-top: 0px;
-    padding-top: 0px;
-}
-
-.link-perfil {
-    text-decoration: underline;
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 40px;
-}
 
 .text-danger {
     color: #6E3733;
@@ -61,15 +28,6 @@ legend {
     margin: 0px 0px 0px 0px;
 }
 
-
-.vermelho {
-    color: red;
-}
-.barra-y{
-    tab-index: 0;
-    top: 0px;
-    height: 103px;
-}
 #nav {
     color: #fff;
     background-color: #37474f;
@@ -131,9 +89,8 @@ nav.nav-wrapper{
 }
 
 main #container-conteudo{
-    /*display: flex;*/
+    display: flex;
     max-width: 100%;
-    padding-bottom: 0px;
     position:relative;
     background:#f8f8f8;
 }
@@ -189,38 +146,6 @@ main #container-conteudo .row{
     width: 100px;
 }
 
-.btn-carrot{
-    background-color: #e67e22;
-    border-color: #e67e22;
-    color: #fff;
-}
-
-.btn-carrot:hover{
-    color: #fff;
-    background-color: #d87824;
-    border-color: #d87824;
-}
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
 
 .checkAssinatura {
     margin: 0 !important;
@@ -237,44 +162,8 @@ main #container-conteudo .row{
     margin-top: -3px;
 }
 
-.dropdown-menu > li > a.btn-user {
-    display: inline-block;
-    width: 100px;
-    margin-bottom: 5px;
-}
-
-.menu-principal {
-    margin-top: 10px;
-}
-
-textarea {
-    resize: none;
-}
-
-.form-inline .form-group label {
-    margin-top: 6px;
-}
 
 
-
-.table, .bottom {
-    clear: both;
-}
-
-.dataTables_length {
-    font-size: 14px;
-    float: left;
-    margin: 20px 0;
-    font-style: normal;
-}
-
-.dataTables_paginate, .dataTables_filter {
-    float: right;
-}
-
-.destaqueErro {
-    color: #a94442;
-}
 
 .texto-editor table tr td {
     border: 1px solid;
@@ -286,71 +175,5 @@ textarea {
     margin-right: auto;
 }
 
-.btn-white > i {
-    color: #FFFFFF;
-}
 
-/*.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    !*border: 1px solid transparent;*!
-    border-radius: 0px;
-}*/
-
-.titulocinza {
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.manualtopo{
-    float: right;
-    margin-right: 05px;
-    position: relative;
-    margin-top: 15px;
-}
-
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
-
-.acesso {
-    min-height: 130px;
-}
-
-/**
-Tela de Termos
-**/
-.btn-criar-grid {
-    float: right;
-    margin-right: 225px;
-    margin-bottom: -99px;
-    position: relative;
-    margin-top: 15px;
-}
-
-.assinaram-termo {
-    color: green !important;
-}
-
-.nao-assinaram-termo {
-    color: red !important;
-}
-
-.cinza {
-    color: #333;
-}
 

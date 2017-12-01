@@ -11,11 +11,11 @@
 
     <!-- Le styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-        ->prependStylesheet($this->basePath() . '/css/materialize.min.css')
         ->prependStylesheet($this->basePath() . '/css/style.css')
         ->prependStylesheet($this->basePath() . '/asset/application/meuProjeto.css')
         ->prependStylesheet($this->basePath() . 'http://fonts.googleapis.com/icon?family=Material+Icons')
         ->prependStylesheet($this->basePath() . 'https://fonts.googleapis.com/css?family=Roboto')
+        ->prependStylesheet($this->basePath() . '/css/materialize.min.css')
     ?>
 
     <!-- Scripts -->
@@ -31,43 +31,7 @@
 <body class>
         <header id="menu-lateral">
             <ul id="slid-out" class="side-nav fixed">
-                <li>
-                    <div class="user-view">
-                        <div class="background">
-                            <img src="/img/fundo_user.jpg">
-                        </div>
-                        <a href="#!user">
-                            <img class="circle" src="/img/cachorro.jpg">
-                        </a>
-                        <a href="#!name">
-                            <span class="white-text name">Lucas Levino</span>
-                        </a>
-                        <a href="#!email">
-                            <span class="white-text email">lukslevino@gmail.com</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href="/" class="waves-effect waves-teal"><i class="material-icons left">person_add</i>Indicar um
-                        amigo</a>
-                </li>
-                <li class="bold"><a href="/" class="waves-effect "><i class="material-icons left">supervisor_account</i>Amigos
-                        indicados</a>
-                </li>
-                <li class="bold"><a href="/" class="waves-effect waves-teal"><i class="material-icons left">account_balance</i>Informar
-                        Endereço</a>
-                </li>
-                <li class="bold"><a href="/" class="waves-effect waves-teal"><i class="material-icons left">mood</i>Meus
-                        Pontos</a>
-                </li>
-                <li class="bold"><a href="/" class="waves-effect waves-teal"><i
-                                class="material-icons left">group_add</i>Amigos Confirmados</a>
-                </li>
-                <li class="bold"><a href="/" class="waves-effect waves-teal"><i class="material-icons left">notifications_none</i>Informações</a>
-                </li>
-                <li class="bold"><a href="/usuario/acesso" class="waves-effect waves-green"><i class="material-icons left">account_circle</i>Login</a>
-                </li>
-
+                <?php echo $this->partial('partial/menu.phtml') ?>
             </ul>
         </header>
         <main>
@@ -90,10 +54,8 @@
                 </div>
             </nav>
             <div class="content">
-                <div class="left-painel">
                             <?php echo $this->content ?>
                 </div>
-            </div>
         </main>
         <script>
             $(document).ready(function () {

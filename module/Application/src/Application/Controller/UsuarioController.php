@@ -16,11 +16,9 @@ class UsuarioController extends AbstractActionController
 {
     public function solicitarAcessoAction()
     {
-        dumpd(1);
         $request = $this->getRequest();
         if ($request->isPost()){
         $post = $request->getPost();
-        //dumpd($post);
         }
 
         $view = new ViewModel();

@@ -2,29 +2,17 @@
     color: #68b604;
 }
 body{
-    margin:0px;
-    padding:0px;
     background: #efefef;
-
-}
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
 }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
+nav {
+    color: #fff;
+    background-color: #37474f;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
 }
+
 
 .btn-success:active, .btn-success.active {
   background-color: #57a900;
@@ -36,9 +24,6 @@ div.container a.brand {
     padding: 8px 20px 12px 40px;
 }
 
-.logo{
-
-}
 ul.side-nav.fixed li.logo{
     text-align:center;
     margin-top:32px;
@@ -55,7 +40,6 @@ ul.side-nav.fixed li{
 @media only screen and (min-width: 993px) {
     header, main, footer {
         margin-left: 300px;
-        padding-left: 0
     }
 }
 @media only screen and (min-width: 1200px){}
@@ -81,11 +65,11 @@ ul.side-nav.fixed li{
 .content {
     display: flex;
     max-width: 100%;
-    padding-bottom: 50px;
-}
-.left-painel{
-    flex-basis: 80%;
     margin-left: .375rem;
+    margin-right: .375rem;
+}
+.painel{
+    flex-basis: 100%;
 }
 @media only screen and (max-width: 993px) {
     .left-panel {
@@ -95,17 +79,7 @@ ul.side-nav.fixed li{
         margin-right: 0;
     }
 }
-
-.element.style {
-    padding-bottom: 20px;
-}
-html {
-    line-height: 1.5;
-    font-family: Roboto,sans-serif;
-    font-weight: 400;
-    color: rgba(0,0,0,.87);
-}
-
-header{
+.waves-effect.waves-teal .waves-ripple {
+    background-color: rgba(55,71,79,0.87)
 
 }
