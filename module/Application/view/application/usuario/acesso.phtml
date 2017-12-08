@@ -11,27 +11,60 @@
             </div>
             <hr>
             <div class="card-content">
-                <div class="row">
                     <div class="input-field col s12 " required>
                         <i class="medium material-icons prefix">account_circle</i>
-                        <input name="nomeUser" id="nomeUser" type="text"  maxlength="100" required autofocus>
+                        <input name="nomeUsuario" id="nomeUser" type="text"  maxlength="100" required autofocus>
                         <label for="nomeUsuario">Usuário</label>
                     </div>
-                </div>
-                <div class="row">
                     <div class="input-field col s12 " required>
                         <i class="medium material-icons prefix">lock</i>
-                        <input name="userPassword" id="userPassword" type="password"  >
-                        <label for="userPassword">Senha</label>
+                        <input name="senhaUsuario" id="userPassword" type="password"  required >
+                        <label for="senhaUsuario">Senha</label>
                     </div>
-                </div>
                 <div class="action right-align">
-                    <a href="/usuario/solicitarAcesso" style="color: black">Primeiro Acesso?</a>&nbsp;&nbsp;
-                    <button type="submit" class="btn btn-primary">Acessar</button>
+                        <button type="button" id="btn-acessar" class="btn btn-primary">Acessar</button>
+                </div>
+                <br>
+                <div class="row">
+                    <a class="modal-trigger" href="#modalSolicitarAcesso" >Primeiro Acesso?</a>&nbsp;
+                    <a class="modal-trigger right" href="#modalRecuperarSenha" >Recuperar Senha</a>&nbsp;
                 </div>
             </div>
-
         </div>
     </div>
 </form>
 </div>
+<?php echo $this->partial('partial/modal-solicitar-acesso.phtml')?>
+<?php echo $this->partial('partial/modal-recuperar-senha.phtml')?>
+<script>
+    $(document).ready(function () {
+       $('.modal').modal();
+       $('select').material_select();
+       $('[name="cpf"]').mask('999-999-999-99');
+        $('[name="fone_cel"]').mask('(99) 99999-9999');
+        $('[name="fone_fixo"]').mask('(99) 9999-9999');
+        $('[name="dtNascimento"]').mask('99/99/9999');
+        $('#btn-cadastrar').click(function () {
+            $.ajax({
+                type: 'POST',
+                data: $('#solicitarAcessoForm').serialize(),
+                url: "/usuario/solicitarAcesso",
+                success: function (data) {
+                    $('#resultado').html(data);
+
+                }
+            });
+        });
+        $('#btn-acessar').click(function () {
+            $.ajax({
+                type: 'POST',
+                data: $('#loginForm').serialize(),
+                url: "/index/acesso",
+                success: function (data) {
+                    $('#resultado').html(data);
+
+                }
+            });
+        });
+    });
+</script>

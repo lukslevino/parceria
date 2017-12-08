@@ -1,13 +1,12 @@
 <?php
-dumpd(1);
 if ($this->identity()): ?>
     <li>
         <div class="user-view">
             <div class="background">
-                <img src="../img/fundo_user.jpg">
+                <img src="/img/fundo_user.jpg">
             </div>
             <a href="#!user">
-                <img class="circle" src="../img/cachorro.jpg">
+                <img class="circle" src="/img/cachorro.jpg">
             </a>
             <a href="#!name">
                 <span class="white-text name">Lucas Levino</span>
@@ -17,7 +16,7 @@ if ($this->identity()): ?>
             </a>
         </div>
     </li>
-<?php endif; ?>
+
 <?php
 //perfil usuario comum
 if ($this->identity()->coFuncao == 1) { ?>
@@ -42,7 +41,7 @@ if ($this->identity()->coFuncao == 1) { ?>
     <li class="bold"><a href="/usuario/acesso" class="waves-effect waves-teal"><i class="material-icons left">account_circle</i>Login</a>
     </li>
 
-<?php } elseif ($this->identity()->coFuncao == 2) ?>
+<?php } elseif ($this->identity()->coFuncao == 2){ ?>
 
     <li>
         <a href="/" class="waves-effect waves-teal"><i class="material-icons left">person_add</i>Verificar Indicados</a>
@@ -51,6 +50,13 @@ if ($this->identity()->coFuncao == 1) { ?>
     </li>
     <li class="bold"><a href="/" class="waves-effect waves-teal"><i class="material-icons left">account_balance</i>Relatorios</a>
     </li>
-<?php else {?>
+<?php } else {?>
     <i class=" large material-icons">perm_identity</i>
 <?php }?>
+<?php else:?>
+    <div class="registrar">
+    <div class="logo">
+    <i class="material-icons menu_login">account_circle</i>
+    </div>
+    </div>
+<?php endif; ?>

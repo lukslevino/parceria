@@ -68,10 +68,17 @@ return array(
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
+            'Zend\Authentication\AuthenticationService' => 'AuthService'
+        ),
+        'invokables' => array(
+            'AuthService' => 'Zend\Authentication\AuthenticationService'
+        ),
+        'factories' => array(
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'pt_BR',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -81,11 +88,20 @@ return array(
         ),
     ),
     'controllers' => array(
+        /*'factories' =>    array('Application\Controller\Analise' => 'Application\Controller\Factory\AnaliseControllerFactory',
+            'Application\Controller\OfertaVaga' => 'Application\Controller\Factory\OfertaVagaControllerFactory',
+        ),*/
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Usuario' => 'Application\Controller\UsuarioController'
         ),
     ),
+    'controller_plugins' => [
+        'invokables' => [
+            'AclPlugin' => 'Base\Controller\Plugin\AclPlugin',
+            'ViewSetup' => 'Application\Controller\Plugin\ViewSetup'
+        ]
+    ],
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
